@@ -16,7 +16,7 @@ recommender = None
 @app.on_event("startup")
 def startup_event():
     global df, recommender
-    df = load_data("test.csv")
+    df = load_data("refined_line_products(in).csv")
     recommender = ContentRecommender(df)
 
 
