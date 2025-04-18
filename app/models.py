@@ -4,9 +4,8 @@ from typing import List, Optional
 class RecommendationRequest(BaseModel):
     product_id: str
 
-
 class ProductResponse(BaseModel):
-    id: str = Field(..., alias="_id")  # To show _id in API response
+    id: str = Field(..., alias="_id")
     name: str
     brand: str
     category: str
@@ -17,8 +16,7 @@ class ProductResponse(BaseModel):
     image_id: Optional[str] = None
 
     class Config:
-        allow_population_by_field_name = True  # Important for alias to work in API response
-
+        allow_population_by_field_name = True
 
 class RecommendationResponse(BaseModel):
     recommendations: List[ProductResponse]
